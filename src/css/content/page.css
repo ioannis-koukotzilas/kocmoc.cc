@@ -1,0 +1,146 @@
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+
+/* Index
+--------------------------------------------- */
+
+/* Spotlight */
+
+.index .spotlight img {
+  width: 100%;
+  object-fit: cover;
+  height: 50vh;
+}
+
+@media (min-width: 960px) {
+  .index .spotlight img {
+    height: calc(100vh - 3.5rem - 2.5rem);
+  }
+}
+
+.index .info > .container {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  padding: 4.5rem 20px;
+}
+
+.index .info h2 {
+  margin-top: 0;
+}
+
+/* Schedule
+--------------------------------------------- */
+
+.schedule > .container {
+  max-width: var(--max-width-fluid);
+  margin: 0 auto;
+  padding: 3rem 20px;
+}
+
+/* Residents
+--------------------------------------------- */
+
+.residents > .container {
+  max-width: var(--max-width-fluid);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.residents .page-header {
+  padding: 0 20px;
+}
+
+.resident:first-child {
+  border-top: 1px solid;
+}
+
+.resident:not(:last-child) {
+  border-bottom: 1px solid;
+}
+
+.resident summary {
+  cursor: pointer;
+  padding: 0.5rem 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resident summary:before {
+  font-family: var(--font-family-icon-base);
+  content: '\e5cf';
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: normal;
+  transform: rotate(-90deg);
+  transition: 0.2s transform ease-in-out;
+}
+
+.resident[open] > summary:before {
+  transform: rotate(0deg);
+}
+
+.resident summary::-webkit-details-marker {
+  display: none;
+}
+
+.resident summary::selection,
+.resident summary::-moz-selection {
+  background: transparent;
+}
+
+.resident .content {
+  padding: 1.5rem 20px 2rem;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 540px) {
+  .resident .content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .resident .content {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.resident .content a {
+  display: block;
+  color: var(--text-dark);
+}
+
+.resident .featured-image {
+  margin: 0;
+}
+
+@media (min-width: 1140px) {
+  .resident .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Info
+--------------------------------------------- */
+
+.info > .container {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  padding: 3rem 20px;
+}
+
+/* Support
+--------------------------------------------- */
+
+.support > .container {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  padding: 3rem 20px;
+}

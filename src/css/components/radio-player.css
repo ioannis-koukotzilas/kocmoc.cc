@@ -1,0 +1,113 @@
+/*--------------------------------------------------------------
+# Radio Player
+--------------------------------------------------------------*/
+
+/* Station
+--------------------------------------------- */
+
+.station {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Station Channel
+--------------------------------------------- */
+
+.station .channel {
+  padding-left: 20px;
+  padding-right: 12px;
+  height: 100%;
+  background-color: var(--bg-light);
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  border-right: 1px solid var(--bg-base);
+}
+
+.station .channel:after {
+  display: inline-flex;
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: red;
+  border-radius: 50%;
+  animation: channel 2s ease-in-out infinite both;
+}
+
+@keyframes channel {
+  0% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Station Track
+--------------------------------------------- */
+
+.station .track {
+  cursor: pointer;
+  flex-grow: 1;
+  padding-left: 12px;
+  padding-right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  /* ellipsis */
+  min-width: 0;
+}
+
+.station .track:hover {
+  background-color: #666;
+}
+
+.station .track.load {
+  background-color: #666;
+}
+
+.station .track.play {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.station .track::before {
+  display: inline-block;
+  font-family: var(--font-family-icon-base);
+  content: '\e037';
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.station .track.load::before {
+  content: '\e627';
+  animation: trackLoad 2s linear infinite;
+}
+
+@keyframes trackLoad {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.station .track.play::before {
+  content: '\e047';
+}
+
+.station .track .cc_streaminfo {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,20 @@
+/*--------------------------------------------------------------
+# Schedule
+--------------------------------------------------------------*/
+
+#schedule > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#schedule > ul > li {
+  position: relative;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+}
+
+#schedule > ul > li .title {
+  font-weight: var(--font-weight-bold);
+}
